@@ -1,0 +1,22 @@
+{
+  "name": "book-site",
+  "version": "1.0.0",
+  "description": "A simple web utility to search and log the books we have read",
+  "repository": {
+    "type": "git",
+    "url": "github.com:DHARNISHJM/book-site.git"
+  },
+  "license": "ISC",
+  "author": "dharnish",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^5.1.0",
+    "joi": "^18.0.1",
+    "mongoose": "^8.18.1"
+  }
+}
