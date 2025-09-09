@@ -1,0 +1,32 @@
+<%- layout("layouts/boilerplate") %>
+    <h1>
+        <%=result.title%>
+    </h1>
+    <img src="<%=result.imageLinks.thumbnail%>" alt="">
+    <p>
+        Author : <span>
+            <% for (let name of result.authors) {%>
+                <%= name %>
+                    <% } %>
+        </span>
+    </p>
+    <p>
+        Publisher: <%= result.publisher %>
+    </p>
+    <p>Published Data: <%= result.publishedDate%>
+    </p>
+    <p>
+        Overview: <%= result.description %>
+    </p>
+    <p>
+        Number of Pages: <%= result.pageCount %>
+    </p>
+    <p>
+        Categories: <span>
+            <% for (let name of result.categories) {%>
+                <%= name %>
+                    <% } %>
+        </span>
+    </p>
+    <a href="<%=result.previewLink%>">Preview Book</a>
+    <a href="<%=result.infoLink%>">Book Info</a>
