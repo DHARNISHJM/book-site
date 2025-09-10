@@ -13,6 +13,7 @@ app.get("/search", async (req, res) => {
 	const { bookName } = req.query;
 	console.log(bookName);
 	const result = await getBook(bookName);
+	console.log(result);
 	res.render("show", { result });
 });
 

@@ -3,3 +3,23 @@ body {
 	background-position: center;
 	background-image: url("background.jpg"); /* or any filler color */
 }
+
+#search {
+	background-color: #daddd8;
+	transition: 0.4s;
+}
+
+#search:hover {
+	background-color: #1c2321;
+	color: #daddd8;
+}
+
+#bookCard {
+	background-color: rgba(255, 255, 255, 0.1);
+	backdrop-filter: blur(5px);
+	color: #daddd8;
+}
+
+.headText {
+	font-size: 1.5em;
+}
