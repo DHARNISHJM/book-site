@@ -7,12 +7,12 @@ const { getBook } = require("./utils");
 app.engine("ejs", ejsMate);
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
+app.use(express.static(path.join(__dirname, "public")));
 
 app.get("/search", async (req, res) => {
 	const { bookName } = req.query;
 	console.log(bookName);
 	const result = await getBook(bookName);
-	console.log(result);
 	res.render("show", { result });
 });
 

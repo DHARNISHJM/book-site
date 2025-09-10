@@ -1,5 +1,11 @@
 <%- layout("layouts/boilerplate")%>
-    <form action="/search">
-        <input class="form-control form-control-lg" type="text" placeholder="Book Search" name="bookName"
-            aria-label=".form-control-lg example">
-    </form>
+    <div class="container d-flex justify-content-center align-items-center" style="min-height: 100vh;">
+        <form action="/search" class="w-100">
+            <div class="input-group">
+                <input class="form-control form-control-lg rounded-start-pill p-3 searchbar"
+                    style=" background-color: rgba(28, 35, 33, 0.75); color: #fff;" type="text" name="bookName"
+                    aria-label=".form-control-lg example">
+                <button class="btn btn-primary rounded-end-pill px-4 bg-dark" type="submit">Search</button>
+            </div>
+        </form>
+    </div>
