@@ -1,10 +1,14 @@
 <%- layout("layouts/boilerplate")%>
-    <div class="container d-flex justify-content-center align-items-center" style="min-height: 100vh;">
+
+    <div class="container d-flex justify-content-evenly flex-column" style="min-height: 100vh;">
+        <h1 class="text-center" style="font-family:Extenda; color: rgba(218,221,218,0.75) ;font-size: 10em">
+            BookSearch.
+        </h1>
         <form action="/search" class="w-100">
             <div class="input-group">
                 <input class="form-control form-control-lg rounded-start-pill p-3 searchbar"
                     style=" background-color: rgba(28, 35, 33, 0.75); color: #fff;" type="text" name="bookName"
-                    aria-label=".form-control-lg example">
+                    aria-label=".form-control-lg example" autofocus>
                 <button class="btn rounded-end-pill px-4" id="search" type="submit">Search</button>
             </div>
         </form>
