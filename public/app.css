@@ -1,7 +1,14 @@
+@font-face {
+	font-family: "Extenda";
+	src: url("font.ttf") format("truetype");
+	font-weight: normal;
+	font-style: normal;
+}
+
 body {
 	background-size: cover;
 	background-position: center;
-	background-image: url("background.png"); /* or any filler color */
+	background-image: url("background.png");
 }
 
 #search {
@@ -12,37 +19,44 @@ body {
 #search:hover {
 	background-color: #1c2321;
 	color: #daddd8;
+	border: 1px solid rgba(255, 255, 255, 0.2);
+	text-decoration: underline;
 }
 
-:root {
-	--bs-navbar-brand-color: #daddd8;
+.custom-nav-link:hover {
+	box-sizing: border-box !important;
+	padding: 0.3em;
+	border-radius: 12px;
+	transition: 0.2s;
+	text-decoration: underline;
+	border: 1px solid #daddd8;
 }
 
 #nav {
+	top: 2%;
+	font-family: "Josefin Sans";
 	position: fixed;
 	width: 100%;
-	background-color: #212529 !important;
+	background-color: rgb(28, 35, 33) !important;
+	backdrop-filter: blur(1px);
 	z-index: 10000;
-	border-radius: 50px;
+	border-radius: 12px;
 	width: 60%;
 	padding: 1em 25px;
-	opacity: 0.75;
+	opacity: 0.9;
 	text-align: center;
 }
 #bookCard {
-	background-color: rgba(0, 0, 0, 0.1);
+	background-color: rgba(255, 255, 255, 0.05);
 	border: 1px #fff;
-	backdrop-filter: blur(5px);
+	backdrop-filter: blur(10px);
+	border-radius: 20px;
+	box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 	color: #daddd8;
+	font-family: "Raleway";
 }
 
 .headText {
-	font-size: 1.5em;
-}
-
-@font-face {
-	font-family: "Extenda"; /* Name you will use in CSS */
-	src: url("font.ttf") format("truetype"); /* Path to your font */
-	font-weight: normal; /* Optional */
-	font-style: normal; /* Optional */
+	font-size: 2em;
+	font-weight: 600;
 }

@@ -1,5 +1,5 @@
 <%- layout("/layouts/boilerplate") %>
-    <div class="d-flex justify-content-center">
+    <div class="d-flex justify-content-center mx-3">
         <nav class="navbar navbar-expand-lg bg-body-tertiary w-75" id="nav">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#" ; style="color: #daddd8">BookSearch.</a>
@@ -11,14 +11,15 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" style="color: #daddd8;" href="/">Home</a>
+                            <a class="nav-link active custom-nav-link" aria-current="page" style="color: #daddd8;"
+                                href="/">Home</a>
                         </li>
                     </ul>
                     <form action="/search" class="w-40">
                         <div class="input-group">
                             <input class="form-control rounded-start-pill py-1 px-3 searchbar"
-                                style=" background-color: rgba(28, 35, 33, 0.75); color: #fff;" type="text"
-                                name="bookName">
+                                style=" background-color: rgba(28, 35, 33, 0.75); color: #fff; border: 1px solid rgba(255,255,255,0.2);"
+                                type="text" name="bookName">
                             <button class="btn rounded-end-pill px-4" id="search" type="submit">Search</button>
                         </div>
                     </form>
