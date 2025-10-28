@@ -34,10 +34,10 @@ body {
 
 #nav {
 	top: 2%;
-	font-family: "Josefin Sans";
+	font-family: "Rethink Sans";
 	position: fixed;
 	width: 100%;
-	background-color: rgb(28, 35, 33) !important;
+	background-color: rgba(28, 35, 33, 0) !important;
 	backdrop-filter: blur(1px);
 	z-index: 10000;
 	border-radius: 12px;

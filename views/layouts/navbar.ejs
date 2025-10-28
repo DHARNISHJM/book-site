@@ -1,7 +1,7 @@
 <%- layout("/layouts/boilerplate") %>
-    <div class="d-flex justify-content-center mx-3">
-        <nav class="navbar navbar-expand-lg bg-body-tertiary w-75" id="nav">
-            <div class="container-fluid">
+    <div class="d-flex justify-content-around mx-3">
+        <nav class="navbar navbar-expand-lg bg-body-tertiary bg-transparent" style="min-width: 100%" id="nav">
+            <div class="container-fluid" style="min-width: 100%;">
                 <a class="navbar-brand" href="#" ; style="color: #daddd8">BookSearch.</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -17,8 +17,8 @@
                     </ul>
                     <form action="/search" class="w-40">
                         <div class="input-group">
-                            <input class="form-control rounded-start-pill py-1 px-3 searchbar"
-                                style=" background-color: rgba(28, 35, 33, 0.75); color: #fff; border: 1px solid rgba(255,255,255,0.2);"
+                            <input class="form-control rounded-start-pill py-2 px-4 searchbar"
+                                style=" background-color: rgba(28, 35, 33, 0); color: #fff; border: 1px solid rgba(255,255,255,0.2);"
                                 type="text" name="bookName">
                             <button class="btn rounded-end-pill px-4" id="search" type="submit">Search</button>
                         </div>
