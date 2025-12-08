@@ -26,10 +26,7 @@ body {
 .custom-nav-link:hover {
 	box-sizing: border-box !important;
 	padding: 0.3em;
-	border-radius: 12px;
-	transition: 0.2s;
 	text-decoration: underline;
-	border: 1px solid #daddd8;
 }
 
 #nav {
@@ -37,15 +34,21 @@ body {
 	font-family: "Rethink Sans";
 	position: fixed;
 	width: 100%;
-	background-color: rgba(28, 35, 33, 0) !important;
+	background-color: rgba(255, 255, 255, 0) !important;
 	backdrop-filter: blur(1px);
 	z-index: 10000;
-	border-radius: 12px;
 	width: 60%;
 	padding: 1em 25px;
 	opacity: 0.9;
 	text-align: center;
 }
+
+.form-control:focus {
+	outline: none !important;
+	box-shadow: 0 0 6px rgba(97, 106, 119, 0.4) !important;
+	border-color: rgba(97, 106, 119, 0.5);
+}
+
 #bookCard {
 	background-color: rgba(255, 255, 255, 0.05);
 	border: 1px #fff;
