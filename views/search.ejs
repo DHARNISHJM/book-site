@@ -1,0 +1,42 @@
+<%- layout("layouts/boilerplate") %>
+
+    <div class="container text-light">
+
+        <% for (const book of result) {%>
+            <div class="card books-search text-light rounded-4 mb-3">
+                <div class="row">
+                    <div class="col-2">
+                        <% if (book.volumeInfo.imageLinks) {%>
+                            <img src=<%=book.volumeInfo.imageLinks.smallThumbnail%> style="max-width:
+                            80%; border-radius: 5%; margin: 2%" class="card-img-top" alt="...">
+                            <% } %>
+                                <% if (!book.volumeInfo.imageLinks) {%>
+                                    <img src="https://static.vecteezy.com/system/resources/previews/005/720/408/non_2x/crossed-image-icon-picture-not-available-delete-picture-symbol-free-vector.jpg"
+                                        style="max-width:
+                            80%; border-radius: 5%; margin: 2%" class="card-img-top" alt="...">
+                                    <% } %>
+                    </div>
+                    <div class="card-body col-10">
+                        <h5 class="card-title">
+                            <%= book.volumeInfo.title %>
+                        </h5>
+                        <% if (book.volumeInfo.authors) {%>
+                            <% for( const author of book.volumeInfo.authors) { %>
+                                <p>
+                                    by <%=author%>
+                                </p>
+                                <% } %>
+                                    <% } %>
+                                        <p>
+                                            <%= book.volumeInfo.publisher%>
+                                        </p>
+                                        <% if (currentUser) {%>
+                                            <button class="btn btn-primary">Want to Read</button>
+                                            <button class="btn btn-success">Currently Reading</button>
+                                            <button class="btn btn-secondary">Read</button>
+                                            <% } %>
+                    </div>
+                </div>
+            </div>
+            <% } %>
+    </div>

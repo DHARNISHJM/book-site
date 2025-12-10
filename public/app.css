@@ -6,9 +6,7 @@
 }
 
 body {
-	background-size: cover;
-	background-position: center;
-	background-image: url("background.png");
+	background-color: #181a1b !important;
 }
 
 #search {
@@ -29,12 +27,16 @@ body {
 	text-decoration: underline;
 }
 
+.books-search {
+	background-color: #1f2223 !important;
+}
+
 #nav {
 	top: 2%;
 	font-family: "Rethink Sans";
-	position: fixed;
 	width: 100%;
-	background-color: rgba(255, 255, 255, 0) !important;
+	margin-top: 1% !important;
+	background-color: #1f2223 !important;
 	backdrop-filter: blur(1px);
 	z-index: 10000;
 	width: 60%;
@@ -50,9 +52,8 @@ body {
 }
 
 #bookCard {
-	background-color: rgba(255, 255, 255, 0.05);
+	background-color: #1f2223 !important;
 	border: 1px #fff;
-	backdrop-filter: blur(10px);
 	border-radius: 20px;
 	box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 	color: #daddd8;
