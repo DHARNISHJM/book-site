@@ -2,41 +2,32 @@
 
     <div class="container text-light">
 
-        <% for (const book of result) {%>
-            <div class="card books-search text-light rounded-4 mb-3">
+        <% for (const movie of result) {%>
+            <div class="card movie-search text-light rounded-4 mb-3"
+                data-movie="<%= encodeURIComponent(JSON.stringify(movie)) %>">
                 <div class="row">
                     <div class="col-2">
-                        <% if (book.volumeInfo.imageLinks) {%>
-                            <img src=<%=book.volumeInfo.imageLinks.smallThumbnail%> style="max-width:
-                            80%; border-radius: 5%; margin: 2%" class="card-img-top" alt="...">
-                            <% } %>
-                                <% if (!book.volumeInfo.imageLinks) {%>
-                                    <img src="https://static.vecteezy.com/system/resources/previews/005/720/408/non_2x/crossed-image-icon-picture-not-available-delete-picture-symbol-free-vector.jpg"
-                                        style="max-width:
-                            80%; border-radius: 5%; margin: 2%" class="card-img-top" alt="...">
-                                    <% } %>
+                        <img src="https://image.tmdb.org/t/p/w154<%=movie.poster_path %>"
+                            style="border-radius: 12px; margin: 2%;" alt="">
                     </div>
-                    <div class="card-body col-10">
+                    <div class=" card-body col-10">
                         <h5 class="card-title">
-                            <%= book.volumeInfo.title %>
+                            <a class="movie-link" href="/show/<%= movie.id%>">
+                                <%= movie.original_title %>
+                            </a>
                         </h5>
-                        <% if (book.volumeInfo.authors) {%>
-                            <% for( const author of book.volumeInfo.authors) { %>
-                                <p>
-                                    by <%=author%>
-                                </p>
-                                <% } %>
-                                    <% } %>
-                                        <p>
-                                            <%= book.volumeInfo.publisher%>
-                                        </p>
-                                        <% if (currentUser) {%>
-                                            <button class="btn btn-primary">Want to Read</button>
-                                            <button class="btn btn-success">Currently Reading</button>
-                                            <button class="btn btn-secondary">Read</button>
-                                            <% } %>
+
+                        <p>
+                            <%= movie.overview%>
+                        </p>
+                        <% if (currentUser) {%>
+                            <button class="btn btn-success watched">Watched</button>
+                            <button class="btn btn-primary watchlist">Add to Watchlist</button>
+                            <% } %>
                     </div>
                 </div>
             </div>
             <% } %>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="scripts/search.js"></script>

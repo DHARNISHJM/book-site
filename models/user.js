@@ -9,24 +9,27 @@ const userSchema = new Schema({
 		unique: true,
 	},
 
-	currentlyReading: [
+	watched: [
 		{
-			type: Schema.Types.ObjectId,
-			ref: "Book",
+			type: {
+				id: Number,
+				title: String,
+				year: Number,
+				imageUrl: String,
+			},
+			ref: "Movie",
 		},
 	],
 
-	finishedReading: [
+	watchlist: [
 		{
-			type: Schema.Types.ObjectId,
-			ref: "Book",
-		},
-	],
-
-	toRead: [
-		{
-			type: Schema.Types.ObjectId,
-			ref: "Book",
+			type: {
+				id: Number,
+				title: String,
+				year: Number,
+				imageUrl: String,
+			},
+			ref: "Movie",
 		},
 	],
 });

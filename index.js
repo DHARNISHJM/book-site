@@ -10,6 +10,9 @@ const flash = require("connect-flash");
 const mongoose = require("mongoose");
 const userRoutes = require("./routes/user");
 const session = require("express-session");
+const dotenv = require("dotenv");
+
+dotenv.config();
 
 app.engine("ejs", ejsMate);
 app.set("views", path.join(__dirname, "views"));
@@ -47,7 +50,7 @@ app.use((req, res, next) => {
 });
 
 mongoose
-	.connect("mongodb://localhost:27017/book-site")
+	.connect("mongodb://localhost:27017/movieLog")
 	.then(() => {
 		console.log("MONGO CONNECTION OPEN!!!");
 	})
@@ -57,10 +60,6 @@ mongoose
 	});
 
 app.use("/", userRoutes);
-
-app.get("/", (req, res) => {
-	res.render("home");
-});
 
 app.listen("7567", () => {
 	console.log("Connected.\nListening on 7567");

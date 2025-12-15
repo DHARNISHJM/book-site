@@ -7,6 +7,22 @@
 
 body {
 	background-color: #181a1b !important;
+	color: #daddd8;
+}
+
+.scroll-row {
+	overflow-x: auto;
+	overflow-y: hidden;
+	scroll-behavior: smooth;
+}
+
+.movie-link {
+	color: #daddd8;
+	text-decoration: none;
+}
+
+.movie-link:hover {
+	text-decoration: underline;
 }
 
 #search {
@@ -51,7 +67,7 @@ body {
 	border-color: rgba(97, 106, 119, 0.5);
 }
 
-#bookCard {
+.card {
 	background-color: #1f2223 !important;
 	border: 1px #fff;
 	border-radius: 20px;

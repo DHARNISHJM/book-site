@@ -2,7 +2,8 @@ const express = require("express");
 const router = express.Router();
 const User = require("../models/user");
 const passport = require("passport");
-const { getBook, getBookIsbn } = require("../utils");
+const { getMovies, getMoviesById } = require("../utils");
+const axios = require("axios");
 
 router.get("/register", (req, res) => {
 	res.render("register.ejs");
@@ -27,6 +28,47 @@ router.post("/register", async (req, res, next) => {
 	}
 });
 
+router.get("/", (req, res) => {
+	res.render("home");
+});
+
+router.get("/show/:id", async (req, res) => {
+	const { id } = req.params;
+	const result = await getMoviesById(id);
+	console.log(result);
+	res.render("show", { result });
+});
+
+router.get("/search", async (req, res) => {
+	try {
+		const { movieName } = req.query;
+		if (!movieName) {
+			return res.status(400).json({ error: "Movie name is required" });
+		}
+		const result = await getMovies(movieName);
+		res.locals.result = result.results;
+		res.render("search.ejs");
+	} catch (error) {
+		console.error("Search error:", error.message);
+		res.render("error", { error: "Failed to search movies. Please try again." });
+	}
+});
+
+router.post("/log", async (req, res) => {
+	try {
+		req.user.watched.push(req.body);
+		await req.user.save();
+		req.flash("success", "Movie Added");
+	} catch (e) {
+		req.flash("error", e.message);
+	}
+});
+
+router.post("/watchList", async (req, res) => {
+	req.user.watchlist.push(req.body);
+	await req.user.save();
+});
+
 router.get("/login", (req, res) => {
 	res.render("login.ejs");
 });
@@ -36,16 +78,8 @@ router.post("/login", passport.authenticate("local", { failureFlash: true, failu
 	res.redirect("/");
 });
 
-router.get("/search", async (req, res) => {
-	const { bookName } = req.query;
-	const result = await getBook(bookName);
-	console.log(result);
-	res.locals.result = result;
-	res.render("search");
-});
-
 router.get("/logout", (req, res, next) => {
-	req.logout(function (err) {
+	req.logout((err) => {
 		if (err) {
 			return next(err);
 		}
@@ -53,5 +87,4 @@ router.get("/logout", (req, res, next) => {
 		res.redirect("/");
 	});
 });
-
 module.exports = router;

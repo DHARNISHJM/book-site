@@ -2,3 +2,5 @@ node_modules/
 .DS_Store
 RESULT.js
 book.js
+.env
+movieData.js
